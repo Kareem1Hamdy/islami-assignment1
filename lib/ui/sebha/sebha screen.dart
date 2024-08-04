@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:islami/components/functions.dart';
+import 'package:islami/providers/themeProvider.dart';
 import 'package:islami/themes/appThemes.dart';
-import 'dart:math' as math;
-
-import 'package:rotation/rotation.dart';
-
+import 'package:provider/provider.dart';
 
 class SebhaScreen extends StatefulWidget {
    SebhaScreen({super.key});
@@ -28,6 +27,8 @@ class _SebhaScreenState extends State<SebhaScreen> {
 
   @override
   Widget build(BuildContext context) {
+
+    ThemeProvider themeProvider=Provider.of<ThemeProvider>(context);
     return Padding(
       padding: const EdgeInsets.only(top: 50),
       child: Center(
@@ -56,14 +57,26 @@ class _SebhaScreenState extends State<SebhaScreen> {
                 child: Stack(
                   alignment: Alignment.topCenter,
                   children: [
+                    themeProvider.currentMode==ThemeMode.dark?
                     Image.asset(
-                        'assets/images/head_sebha_logo.png',
+                        'assets/images/head_sebha_dark.png',
+                      height: 105,
+                      width: 73,
+                    ):
+                    Image.asset(
+                      'assets/images/head_sebha_logo.png',
                       height: 105,
                       width: 73,
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 75),
-                      child: Image.asset(
+                      child: themeProvider.currentMode==ThemeMode.dark?
+                      Image.asset(
+                        'assets/images/body_sebha_dark.png',
+                        height: 234,
+                        width: 232,
+                      ):
+                      Image.asset(
                         'assets/images/body_sebha_logo.png',
                         height: 234,
                         width: 232,
@@ -73,21 +86,19 @@ class _SebhaScreenState extends State<SebhaScreen> {
                 ),
               ),
             ),
-            const Padding(
+             Padding(
               padding: EdgeInsets.symmetric(vertical: 30),
               child: Text(
-                  'Number of praises',
-                style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.w600
-                ),
+                  getLocal(context)!.numOfPraises,
+                style: Theme.of(context).textTheme.bodyLarge,
               ),
             ),
             Container(
               width: 69,
               height: 81,
               decoration: BoxDecoration(
-                color: AppTheme.primaryColor,
+                color: themeProvider.currentMode==ThemeMode.dark?
+                AppTheme.primaryDarkColor:AppTheme.primaryColor,
                 borderRadius: BorderRadius.circular(25)
               ),
               child:  Center(child: Text(
@@ -102,17 +113,20 @@ class _SebhaScreenState extends State<SebhaScreen> {
             const SizedBox(height: 30,),
             Container(
               width: 137,
-              height: 51,
               decoration: BoxDecoration(
-                color: AppTheme.primaryColor,
+                color: themeProvider.currentMode==ThemeMode.dark?
+                AppTheme.secondaryDarkColor:AppTheme.primaryColor,
                 borderRadius: BorderRadius.circular(25)
               ),
-              child:  Center(child: Text(
+              child:  Center(
+                  child: Text(
                   listTasbeeh[index],
-                style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.w400,
-                  color: Colors.white
+                style: themeProvider.currentMode==ThemeMode.dark?
+                Theme.of(context).textTheme.bodyLarge!.copyWith(
+                  color: Colors.black
+                ):
+                Theme.of(context).textTheme.bodyLarge!.copyWith(
+                    color: Colors.white,
                 ),
               )
               ),

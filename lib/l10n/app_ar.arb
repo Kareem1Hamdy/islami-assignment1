@@ -1,0 +1,19 @@
+{
+  "appBarTitle": "إسلامي",
+  "versesNum": "عدد الآيات",
+  "chapterNAme": "اسم السورة",
+  "quraanTab": "القرآن",
+  "hadeethTab": "الأحاديث",
+  "tasbeehTab": "التسبيح",
+  "radioTab": "الراديو",
+  "numOfPraises": "عدد التسبيحات",
+  "alahadeeth": "الأحاديث",
+  "ezeaa": "إذاعة القرآن الكريم",
+  "settings": "الإعدادات",
+  "themeSettings": "المظهر",
+  "languageSettings": "اللغة",
+  "themeLightOption": "فاتح",
+  "themeDarkOption": "داكن",
+  "language1Option": "إنجليزي",
+  "language2Option": "عربي"
+}

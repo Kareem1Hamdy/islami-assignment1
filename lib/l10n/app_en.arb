@@ -1,0 +1,19 @@
+{
+  "appBarTitle": "Islami",
+  "versesNum": "Verses Number",
+  "chapterNAme": "Chapter Name",
+  "quraanTab": "Quraan",
+  "hadeethTab": "Hadeeth",
+  "tasbeehTab": "Tasbeeh",
+  "radioTab": "Radio",
+  "numOfPraises": "Number Of Praises",
+  "alahadeeth": "Al Ahadeeth",
+  "ezeaa": "Holy Quran Radio",
+  "settings": "settings",
+  "themeSettings": "Theme",
+  "languageSettings": "Languages",
+  "themeLightOption": "Light",
+  "themeDarkOption": "Dark",
+  "language1Option": "English",
+  "language2Option": "Arabic"
+}
